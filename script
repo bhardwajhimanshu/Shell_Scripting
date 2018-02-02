@@ -1,0 +1,36 @@
+#! /bin/bash
+count=1
+read f1
+echo -e  "$count : delete 1st line from file\n"
+sed '1d' $f1
+echo "Press next to next command"
+read k
+count=$((count+1))
+echo -e  "$count :delete 3rd line from file\n"
+if [ $k = "next" ] 
+then 
+sed '3d' task 
+echo "Press next to next command"
+fi
+read k
+count=$((count+1))
+echo -e "$count delete last line from file\n"
+if [ $k = "next" ] 
+then 
+sed '$d' task 
+echo "Press next to next command"
+fi
+read k
+count=$((count+1))
+echo -e " $count delete line from 2nd to 4th from file\n"
+if [ $k = "next" ] 
+then 
+sed '2,4d' task 
+fi
+read k
+count=$((count+1))
+echo -e " $count delete line from other than range from file\n"
+if [ $k = "next" ] 
+then 
+sed '2,4!d' task 
+fi

@@ -1,0 +1,6 @@
+#! /bin/bash
+
+echo "Enter your city"
+read city
+echo -e "Wether for the $city\n"
+curl wttr.in/$city
