@@ -1,0 +1,148 @@
+#! /bin/bash
+
+echo "Do you really Want to Make Project"
+read res
+
+echo "Enter the Name of Project "
+read proj
+
+if [ $res = "y" ]
+then 
+	mkdir $proj
+fi
+cd $proj
+echo "Do you want Mainmenu in your Project "
+read r1
+if [ $r1 = "y" ]
+then 
+	touch mainmenu.c
+fi
+touch main.c
+touch headers.h
+touch declaration.h
+touch Makefile
+touch insilize.c
+
+chmod +x Makefile
+
+cat >headers.h<<EOF
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+EOF
+if [ $r1 = "y" ]
+then 
+cat >declaration.h<<EOF1
+int mainmenu();
+int (*mmenu)();
+
+int insilize();
+int (*ini)();
+EOF1
+else
+cat >declaration.h<<EOF6
+int insilize();
+int (*ini)();
+EOF6
+fi
+if [ $r1 = "y" ]
+then 
+cat >insilize.c<<EOF2
+#include"headers.h"
+#include"declaration.h"
+
+int insilize()
+{
+	mmenu = mainmenu;
+	ini = insilize;
+}
+EOF2
+else
+cat >insilize.c<<EOF8
+#include"headers.h"
+#include"declaration.h"
+
+int insilize()
+{
+	ini = insilize;
+}
+EOF8
+fi
+
+if [ $r1 = "y" ]
+then 
+cat>mainmenu.c<<EOF3
+#include"headers.h"
+#include"declaration.h"
+
+int mainmenu()
+{
+	int choice;
+	printf("%s:Begin\n",__FILE__);
+	printf("\t Welcome \n 1.OPTION1 \n 2.OPTION2\n ");
+	scanf("%d",&choice);
+	printf("You opted for %d\n",choice);
+	return choice;
+	printf("%s:End\n",__FILE__);
+}
+EOF3
+fi
+if [ $r1 = "y" ]
+then 
+cat >main.c<<EOF4
+#include"headers.h"
+#include"declaration.h"
+
+int main()
+{
+	printf("%s:Begin\n",__FILE__);
+	insilize();
+	(*mmenu)();
+	printf("%s:End\n",__FILE__);
+}
+
+EOF4
+else
+cat >main.c<<EOF7
+#include"headers.h"
+#include"declaration.h"
+
+int main()
+{
+	printf("%s:Begin\n",__FILE__);
+	insilize();
+	printf("%s:End\n",__FILE__);
+}
+EOF7
+fi
+
+if [ -f mainmenu.c ]
+then 
+cat >Makefile<<EOF5
+$proj: main.o insilize.o mainmenu.o 
+	gcc -o $proj main.o insilize.o mainmenu.o
+main.o: main.c headers.h declaration.h
+	gcc -c main.c
+insilize.o: insilize.o headers.h declaration.h
+	gcc -c insilize.c
+mainmenu.o:mainmenu.o headers.h declaration.h
+	gcc -c mainmenu.c
+
+clean:
+	rm *.o
+EOF5
+else
+cat >Makefile<<EOF6
+$proj: main.o insilize.o  
+	gcc -o $proj main.o insilize.o 
+main.o: main.c headers.h declaration.h
+	gcc -c main.c
+insilize.o: insilize.o headers.h declaration.h
+	gcc -c insilize.c
+clean:
+	rm *.o
+EOF6
+fi
+
+
+

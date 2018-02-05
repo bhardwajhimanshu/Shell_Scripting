@@ -1,0 +1,9 @@
+#! /bin/bash
+
+himanshu="i am a good boy and you are smart"
+
+ne="Hello World"
+
+echo ${ne:6:10}
+echo ${himanshu:12:8}
+

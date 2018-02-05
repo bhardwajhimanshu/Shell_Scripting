@@ -1,0 +1,41 @@
+#!  /bin/bash
+
+ti=`date +%k`
+if [ $ti -gt 0 -a $ti -le 12 ]
+then 
+	espeak "Hello Mr Himanshu Good Morning "
+elif [ $ti -gt 12 -a $ti -le 19 ]
+then 
+	espeak "Hello Mr Himanshu Good Evening "
+elif [ $ti -gt 19 -a $ti -le 24 ]
+then
+	espeak "Hello Mr Himanshu Good Night"
+fi
+
+espeak  "What you want to do?? for today " 
+espeak  "Press 1 For Access Mail "
+espeak  "Press 2 For Work on Project "
+espeak  "Press 3 for Access internet "
+ 
+ read -t10 r1 
+ if [ -z $r1  ]
+then 
+	espeak "Sorry You did not opt any option "
+else
+
+if [ $r1 = "1" ]
+then 
+	xdg-open https://outlook.live.com/owa/
+elif [ $r1 = "2" ]
+then
+PATH1=/home/himanshu/Assignment
+	cd  $PATH1
+	exec bash
+
+elif [ $r1 = "3" ]
+then
+	firefox &
+fi
+fi
+
+
