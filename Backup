@@ -7,7 +7,7 @@ then
 	cp -r `find /root -type f -mmin -400` a
 	gzip -r a
 	tar -cvf a.tar a
-	echo "Hello This is my Test mail2" | sendemail -a a.tar -f "style9720887089@gmail.com"      -u "Backup"      -t "style9720887089@gmail.com"      -cc "bhardwaj_himanshu@hotmail.com"   -s "smtp.gmail.com:587"      -o tls=yes      -xu "style9720887089@gmail.com"      -xp "9759497994Hb"
+	echo "Hello This is my Test mail2" | sendemail -a a.tar -f "style9720887089@gmail.com"      -u "Backup"      -t "style9720887089@gmail.com"      -cc "bhardwaj_himanshu@hotmail.com"   -s "smtp.gmail.com:587"      -o tls=yes      -xu "style@gmail.com"      -xp "xxxxxxxxx"
 
 
 fi
