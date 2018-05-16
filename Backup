@@ -1,4 +1,25 @@
 #! /bin/bash
+## File Name: Backup.sh
+## Project: [Backup Data] 
+## Creation Date: 2018-05-05
+## Copyright: (c) 2018 by Himanshu Bhardwaj
+## Email: <bhardwaj_himanshu@hotmail.com>
+
+## Feel free to copy and distribute and don't forget to drop me a mail,          
+## would love to hear from you regarding your views or if you have any questions. 
+
+## General Description:-
+# This script find the last updated files in home directory of root user,
+# copy all such file into a directory.
+# create a tar of all files
+# Send them to your destinate mail id.
+# Make sure if you have active internet connection.
+##
+
+## Usage:-
+# execute 'Backup' in your directory create a tar of such file who is modified in last 400 min.
+# for future use it will send this tar to your mail id.
+##
 
 echo "Do you want to Backup"
 read ans
