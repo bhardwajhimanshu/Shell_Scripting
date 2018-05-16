@@ -1,5 +1,25 @@
 #! /bin/bash
 
+## File Name: MakeProject.sh
+## Project: [Project Dummy] 
+## Creation Date: 2017-11-05
+## Copyright: (c) 2017 by Himanshu Bhardwaj, Mentor: Mr.Pravjot Singh
+## Email: <bhardwaj_himanshu@hotmail.com>
+
+## Feel free to copy and distribute and don't forget to drop me a mail,          
+## would love to hear from you regarding your views or if you have any questions. 
+
+## General Description:-
+# This script saves the time for user who is going to start a project
+# create all prerequisite files that are used at time of project creation into a directory.
+# Makefile also created to execute that project
+# ##
+
+## Usage:-
+# execute 'MakeProject' in your directory it will create a directory with the name of your Project.
+##
+
+
 echo "Do you really Want to Make Project"
 read res
 
