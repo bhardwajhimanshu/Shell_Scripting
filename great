@@ -1,4 +1,26 @@
-#!  /bin/bash
+#! /bin/bash
+## File Name: great.sh
+## Project: [Greeting] 
+## Creation Date: 2018-04-15
+## Copyright: (c) 2018 by Himanshu Bhardwaj, Mentor: Mr.Pravjot Singh
+## Email: <bhardwaj_himanshu@hotmail.com>
+
+## Feel free to copy and distribute and don't forget to drop me a mail,          
+## would love to hear from you regarding your views or if you have any questions. 
+
+## General Description:-
+# This script usually used to check mail,create projects or surf internet when you will open your system,
+# Your system will great you and ask for your choice.
+# put your choice
+# It will redirect your choice accordingly
+# Make sure if you have active internet connection.
+##
+
+## Usage:-
+# execute 'great' will make you fun with automate the task when system startup
+# it will ask for create project ,access your mail list and surf the internet.
+#if you didn't reply it will automatically timeout after some span of time.
+##
 
 ti=`date +%k`
 if [ $ti -gt 0 -a $ti -le 12 ]
