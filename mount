@@ -1,4 +1,21 @@
 #! /bin/bash
+## File Name: mount.sh
+## Project: [mount point] 
+## Creation Date: 2018-04-05
+## Copyright: (c) 2018 by Himanshu Bhardwaj, Mentor: Mr.Pravjot Singh
+## Email: <bhardwaj_himanshu@hotmail.com>
+
+## Feel free to copy and distribute and don't forget to drop me a mail,          
+## would love to hear from you regarding your views or if you have any questions. 
+
+## General Description:-
+# This script is used to find the mount point alert
+##
+
+## Usage:-
+# execute this script tells you how much % memory is free and utalized.
+##
+
 
 df | cut -c54-75 | sed -e 's/se/0/g'>m
 
