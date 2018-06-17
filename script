@@ -27,6 +27,8 @@ if [ $k = "next" ]
 then 
 sed '2,4d' task 
 fi
+
+echo himanshu
 read k
 count=$((count+1))
 echo -e " $count delete line from other than range from file\n"
